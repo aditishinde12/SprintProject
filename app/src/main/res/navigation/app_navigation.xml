@@ -28,4 +28,9 @@
         android:name="com.capgemini.sprintproject.TaskList"
         android:label="activity_task_list"
         tools:layout="@layout/activity_task_list" />
+    <fragment
+        android:id="@+id/displayFragment"
+        android:name="com.capgemini.sprintproject.DisplayFragment"
+        android:label="fragment_display"
+        tools:layout="@layout/fragment_display" />
 </navigation>
