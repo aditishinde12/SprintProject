@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +41,51 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_register, container, false)
     }
+
+
+    lateinit var emailEditText: EditText
+    lateinit var password1EditText: EditText
+    lateinit var password2EditText: EditText
+    lateinit var registerButton:Button
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        emailEditText=view.findViewById(R.id.emailE)
+        password1EditText=view.findViewById(R.id.passE)
+        password2EditText=view.findViewById(R.id.passcheckE)
+        registerButton=view.findViewById(R.id.register1B)
+
+        arguments?.let { val mailid= it.getString("email")
+            emailEditText.setText(mailid)}
+
+     //  val pass=password1EditText.text.toString()
+       //val passCheck=password2EditText.text.toString()
+        val email=emailEditText.text.toString()
+
+        registerButton.setOnClickListener{
+
+            if((password1EditText.text.toString()==password2EditText.text.toString())&& email.isNotEmpty())
+            {
+
+                Toast.makeText(requireContext(),"Account Created",Toast.LENGTH_LONG).show()
+                findNavController().popBackStack(R.id.loginFragment,false)
+            }
+            else if(email.isEmpty()||password1EditText.text.toString().isEmpty()||password2EditText.text.toString().isEmpty()){
+                Snackbar.make(requireView(), "Enter all fields", Snackbar.LENGTH_LONG).show()
+        }
+            else
+            {
+                Snackbar.make(requireView(), "Password mismatch", Snackbar.LENGTH_LONG).show()
+
+            }
+
+
+        }
+
+
+        }
+
+
 
     companion object {
         /**

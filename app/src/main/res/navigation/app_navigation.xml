@@ -18,5 +18,14 @@
         android:id="@+id/registerFragment"
         android:name="com.capgemini.sprintproject.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_taskList"
+            app:destination="@id/taskList" />
+    </fragment>
+    <activity
+        android:id="@+id/taskList"
+        android:name="com.capgemini.sprintproject.TaskList"
+        android:label="activity_task_list"
+        tools:layout="@layout/activity_task_list" />
 </navigation>

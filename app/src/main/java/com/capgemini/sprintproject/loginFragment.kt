@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 
@@ -52,17 +53,13 @@ class loginFragment : Fragment() {
         passwordEditText=view.findViewById(R.id.passET)
         loginButton=view.findViewById(R.id.loginB)
         registerButton=view.findViewById(R.id.registerB)
+
         registerButton.setOnClickListener{
             val email=emailEditText.text.toString()
-            if(email.isNotEmpty())
-            {
-                //navigate to login with action id
                 val dataBundle= bundleOf("email" to email)
-                findNavController().navigate(R.id.action_loginFragment_to_registerFragment,dataBundle)
-            }
-
-
-
+                findNavController().navigate(R.id.action_loginFragment_to_registerFragment,dataBundle) }
+        loginButton.setOnClickListener{
+            findNavController().navigate(R.id.taskList)
         }
 
 
