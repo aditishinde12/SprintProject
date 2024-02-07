@@ -43,7 +43,8 @@ class TaskAdapter(val listOfTask:MutableList<Task>, val onSelection:(Int)->Unit)
 
         holder.taskNameTextView.text=task.taskName
         holder.priorityTextView.text=task.priority
-        holder.endDateTextView.text="${task.endDate}"
+        //holder.endDateTextView.text="${task.endDate}
+        holder.endDateTextView.text=task.endDate
 
     }
 
