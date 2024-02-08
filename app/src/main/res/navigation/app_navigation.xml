@@ -33,4 +33,9 @@
         android:name="com.capgemini.sprintproject.DisplayFragment"
         android:label="fragment_display"
         tools:layout="@layout/fragment_display" />
+    <activity
+        android:id="@+id/createtaskActivity"
+        android:name="com.capgemini.sprintproject.createtaskActivity"
+        android:label="activity_createtask"
+        tools:layout="@layout/activity_createtask" />
 </navigation>
