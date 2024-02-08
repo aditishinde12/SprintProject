@@ -42,7 +42,7 @@ class RegisterFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_register, container, false)
     }
 
-
+    lateinit var userIdEditText: EditText
     lateinit var emailEditText: EditText
     lateinit var password1EditText: EditText
     lateinit var password2EditText: EditText
@@ -50,17 +50,21 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        userIdEditText=view.findViewById(R.id.userIdE)
         emailEditText=view.findViewById(R.id.emailE)
         password1EditText=view.findViewById(R.id.passE)
         password2EditText=view.findViewById(R.id.passcheckE)
         registerButton=view.findViewById(R.id.register1B)
 
-        arguments?.let { val mailid= it.getString("email")
+       /* arguments?.let { val mailid= it.getString("email")
             emailEditText.setText(mailid)}
+            */
+
 
      //  val pass=password1EditText.text.toString()
        //val passCheck=password2EditText.text.toString()
         val email=emailEditText.text.toString()
+        val userId=userIdEditText.text.toString()
 
         registerButton.setOnClickListener{
 
@@ -70,7 +74,7 @@ class RegisterFragment : Fragment() {
                 Toast.makeText(requireContext(),"Account Created",Toast.LENGTH_LONG).show()
                 findNavController().popBackStack(R.id.loginFragment,false)
             }
-            else if(email.isEmpty()||password1EditText.text.toString().isEmpty()||password2EditText.text.toString().isEmpty()){
+            else if(userId.isEmpty()||email.isEmpty()||password1EditText.text.toString().isEmpty()||password2EditText.text.toString().isEmpty()){
                 Snackbar.make(requireView(), "Enter all fields", Snackbar.LENGTH_LONG).show()
         }
             else

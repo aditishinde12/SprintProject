@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F18B84"
     tools:context=".loginFragment">
 
     <TextView
@@ -12,21 +13,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="LOGIN "
-        android:textSize="24sp"
+        android:textColor="#EBF1F0"
+        android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/emailET"
+        android:id="@+id/userIdT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:ems="10"
+        android:fontFamily="monospace"
         android:hint="Enter Email id"
         android:inputType="textEmailAddress"
+        android:textColor="#EADDDD"
+        android:textColorHint="#E1D7D7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,29 +45,45 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:ems="10"
+        android:fontFamily="monospace"
         android:hint="Enter password"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/emailET"
-        app:layout_constraintStart_toStartOf="@+id/emailET"
-        app:layout_constraintTop_toBottomOf="@+id/emailET" />
+        android:textColor="#F6F1F1"
+        android:textColorHint="#EAE4E4"
+        app:layout_constraintEnd_toEndOf="@+id/userIdT"
+        app:layout_constraintStart_toStartOf="@+id/userIdT"
+        app:layout_constraintTop_toBottomOf="@+id/userIdT" />
 
     <Button
         android:id="@+id/loginB"
+        style="@style/Widget.Material3.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="96dp"
+        android:backgroundTint="#E3BCBC"
+        android:fontFamily="monospace"
         android:text="LOGIN"
-        app:layout_constraintBottom_toBottomOf="@+id/registerB"
-        app:layout_constraintStart_toStartOf="@+id/passET"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passET" />
 
     <Button
         android:id="@+id/registerB"
-        android:layout_width="109dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="84dp"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="157dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="92dp"
+        android:backgroundTint="#E3BCBC"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Register"
-        app:layout_constraintEnd_toEndOf="@+id/passET"
-        app:layout_constraintTop_toBottomOf="@+id/passET" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/loginB"
+        app:layout_constraintStart_toEndOf="@+id/loginB"
+        app:layout_constraintTop_toBottomOf="@+id/passET"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

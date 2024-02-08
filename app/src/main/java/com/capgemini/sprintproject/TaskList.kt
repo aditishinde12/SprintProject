@@ -27,9 +27,9 @@ class TaskList : AppCompatActivity() {
 
     fun populateData()
     {
-        taskList.add(Task("Eat",2,3,"High",true))
-        taskList.add(Task("Play",4,5,"low",true))
-        taskList.add(Task("dance",1,1,"low",true))
+        taskList.add(Task("Eat","22-01-21","22-02-21","high",true))
+        taskList.add(Task("Play","04-12-18","12-03-09","low",true))
+        taskList.add(Task("dance","04-12-18","04-12-18","low",true))
 
 
     }
@@ -87,11 +87,20 @@ class TaskList : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.priority -> {
+            R.id.date_item -> {
                 //sort by date
-                taskList.sortBy { it.priority }
+                taskList.sortBy { it.endDate }
                 rView.adapter?.notifyDataSetChanged()
             }
+            R.id.priority_item_high->{
+                taskList.filter {it.priority=="high"}
+                rView.adapter?.notifyDataSetChanged()
+            }
+            R.id.priority_item_low->{
+                taskList.filter {it.priority=="low"}
+                rView.adapter?.notifyDataSetChanged()
+            }
+
         }
 
         return super.onOptionsItemSelected(item)

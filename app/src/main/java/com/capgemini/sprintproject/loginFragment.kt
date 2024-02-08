@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,24 +42,32 @@ class loginFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
-   lateinit var emailEditText: EditText
+   lateinit var UserIdEditText: EditText
    lateinit var passwordEditText: EditText
    lateinit var loginButton:Button
    lateinit var registerButton: Button
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        emailEditText=view.findViewById(R.id.emailET)
+        UserIdEditText=view.findViewById(R.id.userIdT)
         passwordEditText=view.findViewById(R.id.passET)
         loginButton=view.findViewById(R.id.loginB)
         registerButton=view.findViewById(R.id.registerB)
 
         registerButton.setOnClickListener{
-            val email=emailEditText.text.toString()
+            /*val email=emailEditText.text.toString()
                 val dataBundle= bundleOf("email" to email)
-                findNavController().navigate(R.id.action_loginFragment_to_registerFragment,dataBundle) }
+
+             */
+                findNavController().navigate(R.id.registerFragment) }
         loginButton.setOnClickListener{
+            if(UserIdEditText.text.toString().isNotEmpty() && passwordEditText.text.toString().isNotEmpty())
             findNavController().navigate(R.id.taskList)
+
+            else
+            {
+                Snackbar.make(requireView(), "Enter all fields", Snackbar.LENGTH_LONG).show()
+            }
         }
 
 
