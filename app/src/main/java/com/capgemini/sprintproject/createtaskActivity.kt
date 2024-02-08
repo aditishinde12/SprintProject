@@ -7,8 +7,7 @@ import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.Toast
-import androidx.navigation.findNavController
-import com.capgemini.tasktracker.model.DateConverter
+//import com.capgemini.sprintproject.model.DateConverter
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -47,7 +46,7 @@ class createtaskActivity : AppCompatActivity() {
                     val formattedDate=dateFormat.format(sDate.time)
 
                     startdateEdt.setText(formattedDate)
-                    var startDate= DateConverter().fromTimestamp(formattedDate)
+                   // var startDate= DateConverter().fromTimestamp(formattedDate)
 
 
                 },
@@ -77,7 +76,7 @@ class createtaskActivity : AppCompatActivity() {
                     val formattedDate=dateFormat.format(dDate.time)
 
                     dueDateEdt.setText(formattedDate)
-                    var dueDate=DateConverter().fromTimestamp(formattedDate)
+                   // var dueDate= DateConverter().fromTimestamp(formattedDate)
                 },
                 //passing year, month and day for the selected date in our date picker.
                 year,
