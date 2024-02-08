@@ -28,16 +28,15 @@
         android:id="@+id/emailE"
         android:layout_width="249dp"
         android:layout_height="51dp"
-        android:layout_marginTop="40dp"
         android:ems="10"
         android:fontFamily="monospace"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:textColorHint="#F1EBEB"
-        app:layout_constraintEnd_toEndOf="@+id/userIdE"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/userIdE"
-        app:layout_constraintTop_toBottomOf="@+id/userIdE" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/passE"
@@ -84,7 +83,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passcheckE" />
 
-    <EditText
+    <!--    <EditText
         android:id="@+id/userIdE"
         android:layout_width="249dp"
         android:layout_height="51dp"
@@ -99,5 +98,5 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>

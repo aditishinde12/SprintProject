@@ -5,7 +5,7 @@ import android.app.DownloadManager.Query
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.capgemini.tasktracker.model.Task
+//import com.capgemini.tasktracker.model.Task
 import com.capgemini.tasktracker.model.TaskRepository
 import com.capgemini.tasktracker.model.User
 import kotlinx.coroutines.CoroutineScope
@@ -15,11 +15,11 @@ import kotlinx.coroutines.launch
 class TaskViewModel(application: Application): AndroidViewModel(application) {
     //owns repository
     private val repo =TaskRepository(application)
-    var taskList: MutableLiveData<List<Task>> = repo.allTasks as MutableLiveData<List<Task>>
-
+ //   var taskList: MutableLiveData<List<Task>> = repo.allTasks as MutableLiveData<List<Task>>
+ var isUserAdded= MutableLiveData<Boolean>(false)
     fun insertUser(user: User){
         CoroutineScope(Dispatchers.IO).launch{
-            repo.insertUser(user)
+          isUserAdded.postValue(repo.insertUser(user))
         }
     }
     fun updateUser(user: User){
@@ -27,7 +27,7 @@ class TaskViewModel(application: Application): AndroidViewModel(application) {
             repo.updateUser(user)
         }
     }
-    fun insertTask(task: Task){
+ /*   fun insertTask(task: Task){
         CoroutineScope(Dispatchers.IO).launch{
             repo.insertTask(task)
         }
@@ -47,5 +47,5 @@ class TaskViewModel(application: Application): AndroidViewModel(application) {
     }
     fun getAllTasks(): MutableLiveData<List<Task>>{
         return taskList
-    }
+    }*/
 }

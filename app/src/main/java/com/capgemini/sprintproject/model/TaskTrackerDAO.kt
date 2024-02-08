@@ -11,7 +11,7 @@ interface TaskTrackerDAO {
     @Update
     fun updateUser(user: User)
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
+ /*   @Insert(onConflict = OnConflictStrategy.ABORT)
     fun insertTask(task: Task)
 
     @Update
@@ -27,5 +27,5 @@ interface TaskTrackerDAO {
     fun getAllTasks(): LiveData<List<Task>>
 
     @Query("SELECT * FROM Task WHERE task_name LIKE :task")
-    fun searchTask(searchQuery: String): LiveData<List<Task>>
+    fun searchTask(searchQuery: String): LiveData<List<Task>>   */
 }
